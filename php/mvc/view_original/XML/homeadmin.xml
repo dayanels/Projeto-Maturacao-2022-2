@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+  <para><note><remark>Required meta tags</remark></note><note><remark>Bootstrap CSS</remark></note><note><remark>Style</remark></note><note><remark>&lt;!-----------------------------------------------------------------------Nav Bar------------------------------------------------------------------&gt;</remark></note><inlinegraphic fileref="https://thumbs.dreamstime.com/b/ícone-calvo-do-avatar-homem-com-barba-em-sua-boca-123115287.jpg" width="8.3335inch" depth="8.3335inch"/> </para>
+  <sect1>
+    <title>Olá, Twillight!</title>
+    <sect2>
+      <title>Admin</title>
+      <sect1 id="linha-horizontal">
+        <orderedlist>
+          <listitem>
+            <para/>
+          </listitem>
+        </orderedlist>
+      </sect1>
+      <orderedlist>
+        <listitem>
+          <para><olink targetdocent="home.html">Inicio</olink> </para>
+        </listitem>
+      </orderedlist>
+      <sect1 id="Section1">
+        <orderedlist>
+          <listitem>
+            <para>
+              <anchor id="linha-horizontal"/>
+            </para>
+          </listitem>
+        </orderedlist>
+      </sect1>
+      <orderedlist>
+        <listitem>
+          <para>Usuários </para>
+        </listitem>
+        <listitem>
+          <para><link linkend="">Administradores</link> </para>
+        </listitem>
+        <listitem>
+          <para><link linkend="">Discentes</link> </para>
+        </listitem>
+        <listitem>
+          <para><link linkend="">Docentes</link> </para>
+        </listitem>
+        <listitem>
+          <para><link linkend="">Monitores</link> </para>
+          <para>Disciplinas </para>
+        </listitem>
+        <listitem>
+          <para><link linkend="">Visualizar Disciplinas</link> </para>
+        </listitem>
+      </orderedlist>
+      <para><note><remark>&lt;!-----------------------------------------------------------------------Top Page------------------------------------------------------------------&gt;</remark></note>Listagem de Usuários</para>
+      <informaltable frame="all">
+        <tgroup cols="7"><thead><row><entry><para><note><remark>&lt;!-----------------------------------------------------------------------Table------------------------------------------------------------------&gt;</remark></note></para></entry><entry><para/></entry><entry><para>Nome</para></entry><entry><para>Matrícula</para></entry><entry><para>Categoria</para></entry><entry><para>Status</para></entry><entry><para/></entry></row></thead><tbody><row><entry><para/></entry><entry><para/></entry><entry><para>Carlos </para></entry><entry><para>2020102201940085</para></entry><entry><para>Professor</para></entry><entry><para>Ativo</para></entry><entry><para><ulink url="https://presencial.ifgoiano.edu.br/">Ações</ulink></para></entry></row><row><entry><para/></entry><entry><para/></entry><entry><para>Ivan </para></entry><entry><para>2018102201945785</para></entry><entry><para>Monitor</para></entry><entry><para>Ativo</para></entry><entry><para><ulink url="https://presencial.ifgoiano.edu.br/">Ações</ulink></para></entry></row><row><entry><para/></entry><entry><para/></entry><entry><para>José </para></entry><entry><para>2019102201940022</para></entry><entry><para>Aluno</para></entry><entry><para>Ativo</para></entry><entry><para><ulink url="https://presencial.ifgoiano.edu.br/">Ações</ulink></para></entry></row><row><entry><para/></entry><entry><para/></entry><entry><para>Twillight </para></entry><entry><para>2020102201940011</para></entry><entry><para>Administrador</para></entry><entry><para>Ativo</para></entry><entry><para><ulink url="https://presencial.ifgoiano.edu.br/">Ações</ulink></para></entry></row><row><entry><para/></entry><entry><para/></entry><entry><para>Wanda </para></entry><entry><para>2020102201845321</para></entry><entry><para>Aluno</para></entry><entry><para>Desativado</para></entry><entry><para><ulink url="https://presencial.ifgoiano.edu.br/">Ações</ulink></para></entry></row></tbody></tgroup>
+      </informaltable>
+      <para/>
+    </sect2>
+  </sect1>
+</article>

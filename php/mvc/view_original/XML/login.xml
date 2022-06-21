@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+  <para>
+    <note>
+      <remark>===== CSS =====</remark>
+    </note>
+    <note>
+      <remark>===== BOX ICONS =====</remark>
+    </note>NULL DOUBT</para>
+  <para>
+    <inlinegraphic fileref="https://images2.imgbox.com/fc/a2/EonFUIX8_o.png" width="4.1665inch" depth="2.8126inch"/>
+  </para>
+  <para>Sign In</para>
+  <para>
+    <anchor id="user"/>
+  </para>
+  <para>
+    <anchor id="password"/>
+  </para>
+  <para>
+    <link linkend="">Esqueceu a senha?</link>
+    <olink targetdocent="home.html">Sign In</olink>
+  </para>
+  <para>Não tem conta ? <anchor id="sign-up"/>
+Sign Up </para>
+  <para>Criar Conta</para>
+  <para></para>
+  <para></para>
+  <para></para>
+  <para>
+    <link linkend="">Sign Up</link>
+  </para>
+  <para>Já tem alguma conta ? <anchor id="sign-in"/>
+Sign In </para>
+  <para>
+    <note>
+      <remark>&lt;!--===== MAIN JS =====--&gt;</remark>
+    </note>
+  </para>
+</article>
