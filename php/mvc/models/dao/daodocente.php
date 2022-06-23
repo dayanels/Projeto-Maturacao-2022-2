@@ -6,6 +6,22 @@ require_once $path . '/models/db/conexao.php';
 class DaoDocente
 {
 
+    public function createDocente($docente)
+    {
+        $con = new Conexao();
+
+        $con = $con->getConnection();
+
+        $sql = "INSERT INTO docente(nome, senha, matricula, ativo) VALUES(?,MD5(?),?,?);";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param("sssi",  $nome, $senha, $matricula, $ativo);
+        $matricula = $docente->getMatricula();
+        $nome = $docente->getNome();
+        $senha = $docente->getSenha();
+        $ativo = $docente->getAtivo();
+        $stmt->execute();
+    }
+
     public function getAllActiveTeachers()
     {
         $conexao = new Conexao();

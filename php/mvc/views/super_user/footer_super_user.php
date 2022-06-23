@@ -1,14 +1,14 @@
 <?php
-    function retornaAtivoEmFormatoTexto($ativo)
-    {
-        if ($ativo == 1) {
-            $ativo = "Ativo";
-        } else {
-            $ativo = "Inativo";
-        }
-
-        return $ativo;
+function retornaAtivoEmFormatoTexto($ativo)
+{
+    if ($ativo == 1) {
+        $ativo = "Ativo";
+    } else {
+        $ativo = "Inativo";
     }
+
+    return $ativo;
+}
 ?>
 
 </table>
@@ -18,53 +18,68 @@
 <table class="table text-center table-hover">
     <thead>
         <tr>
+
             <th scope="col">Matricula</th>
             <th scope="col">Nome</th>
             <th scope="col">Ativo</th>
             <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
-    <?php
+        <?php
         $dao = new DaoDocente();
         $teachers_on = $dao->getAllActiveTeachers();
         $teachers_off = $dao->getAllInactiveTeachers();
 
         if ($teachers_on != null or $teachers_off != null) {
             if ($teachers_on != null) {
-            foreach ($teachers_on as $teacher) {
-                echo '
+                foreach ($teachers_on as $teacher) {
+                    echo '
                     <tr>
                     <td>' . $teacher->matricula . '</td>
                     <td> ' . $teacher->nome . '</td>
                     <td> <font color="green">' . retornaAtivoEmFormatoTexto($teacher->ativo) . '</font> </td>
                     <td> 
                     <a href="?p=admin&adm=change-docente&id='
-                    . $teacher->matricula .
-                    '" >    Desativar
+                        . $teacher->matricula .
+                        '" >    Desativar
+                    </a>
+                    </td>
+                    <td> 
+                    <a href="?p=admin&adm=change-docente&id='
+                        . $teacher->matricula .
+                        '" >    Editar
                     </a>
                     </td>
                     </tr>
                     ';
+                }
             }
-        }
             if ($teachers_off != null) {
-            foreach ($teachers_off as $teacher) {
-                echo '
+                foreach ($teachers_off as $teacher) {
+                    echo '
                     <tr>
                     <td>' . $teacher->matricula . '</td>
                     <td> ' . $teacher->nome . '</td>
                     <td> <font color="red">' . retornaAtivoEmFormatoTexto($teacher->ativo) . '</font> </td>
                     <td> 
                     <a href="?p=admin&adm=change-docente&id='
-                    . $teacher->matricula .
-                    '" >
+                        . $teacher->matricula .
+                        '" >
                                  Reativar
                                  </a>
                     </td>
+                    <td> 
+                    <a href="?p=admin&adm=change-docente&id='
+                        . $teacher->matricula .
+                        '" >    Editar
+                    </a>
+                    </td>
                     </tr>
                     ';
-            }}
+                }
+            }
         } else {
             echo '
                     <tr>
@@ -73,8 +88,55 @@
         
                 ';
         }
-        ?>
 
+        echo '
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <tr>
+        <form method="post">
+            <td>
+                <input placeholder="Matricula" type="text" id="matricula_docente" name="matricula_docente" size="16">
+            </td>
+            <td>
+                <input placeholder="Nome" type="text" id="nome_docente" name="nome_docente" size="16">
+            </td>
+            <td>
+                <input placeholder="Senha" type="password" id="senha_docente" name="senha_docente" size="4">
+            </td>
+           
+            <td>
+               
+                <button id="adicionar_docente" type="submit" name="adicionar_docente">
+                    Adicionar                    
+                </button>
+                
+               
+            </td>
+     
+            <td>
+
+            </td>
+            </form>
+        </tr>
+        ';
+        
+        //if (isset($_POST['adicionar_docente'])) {
+
+
+            /*echo "<script>
+            document.getElementById('adicionar_docente').addEventListener('click', function(event){
+                event.preventDefault()
+              });
+              </script>";*/
+
+            //echo "<script>
+            //document.getElementById('adicionar_docente').addEventListener('click');
+            //  </script>";
+
+            // window.location.href='?p=admin&adm=new-docente'
+        //}
+        
+        ?>
+        <!-- <input placeholder="Matrícula" required type="number" name="matricula_docente" step="false" id="matricula_docente" aria-describedby="Matrícula"> -->
 
     </tbody>
 </table>
@@ -118,39 +180,41 @@
         $courses_off = $dao->getAllInactiveCoursers();
 
         if ($courses_on != null or $courses_off != null) {
-            if($courses_on != null) {
-            foreach ($courses_on as $course) {
-                echo '
+            if ($courses_on != null) {
+                foreach ($courses_on as $course) {
+                    echo '
                     <tr>
                     <td>' . $course->nome . '</td>
                     <td> ' . $course->cod_Curso . '</td>
                     <td> <font color="green">' . retornaAtivoEmFormatoTexto($course->ativo) . '</font> </td>
                     <td> 
                     <a href="?p=admin&adm=change-curso&id='
-                    . $course->cod_Curso .
-                    '" >    Desativar
+                        . $course->cod_Curso .
+                        '" >    Desativar
                     </a>
                     </td>
                     </tr>
                     ';
-            }}
-            if($courses_off != null) {
-            foreach ($courses_off as $course) {
-                echo '
+                }
+            }
+            if ($courses_off != null) {
+                foreach ($courses_off as $course) {
+                    echo '
                     <tr>
                     <td>' . $course->nome . '</td>
                     <td> ' . $course->cod_Curso . '</td>
                     <td> <font color="red">' . retornaAtivoEmFormatoTexto($course->ativo) . '</font> </td>
                     <td> 
                     <a href="?p=admin&adm=change-curso&id='
-                    . $course->cod_Curso .
-                    '" >
+                        . $course->cod_Curso .
+                        '" >
                                  Reativar
                                  </a>
                     </td>
                     </tr>
                     ';
-            }}
+                }
+            }
         } else {
             echo '
                     <tr>
@@ -159,9 +223,42 @@
         
                 ';
         }
+
+        echo '
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <tr>
+        <form method="post">
+            <td>
+                <input placeholder="Nome do curso" type="text" id="nome_curso" name="nome_curso" size="16">
+            </td>
+            <td>
+                <input placeholder="Código do curso" type="number" id="codigo_curso" name="codigo_curso" size="16">
+            </td>         
+            <td>
+               
+                <button id="adicionar_curso" type="submit" name="adicionar_curso">
+                    Adicionar                    
+                </button>
+                               
+            </td>
+     
+            <td>
+
+            </td>
+            </form>
+        </tr>
+        ';
+        //if (isset($_POST['adicionar_curso'])) {
+
+
+            /*echo "<script>
+            document.getElementById('adicionar_curso').addEventListener('click', function(event){
+                event.preventDefault()
+              });
+              </script>";*/
+            // window.location.href='?p=admin&adm=new-docente'
+        //}
         ?>
-
-
     </tbody>
 </table>
 

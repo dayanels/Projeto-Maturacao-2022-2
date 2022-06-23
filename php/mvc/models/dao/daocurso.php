@@ -6,25 +6,22 @@ require_once $path . '/models/db/conexao.php';
 class DaoCurso
 {
 
-    public function create($discente, $cod_Curso){
+    public function createCurso($curso)
+    {
         $con = new Conexao();
-        $curso = new Curso();
+
         $con = $con->getConnection();
-        if($curso->getCodCurso() == $cod_Curso){
-        $sql = "INSERT INTO discente(matricula, nome, curso, senha, fk_Curso, ativo) VALUES(?,?,?,MD5(?),?,?);";
+
+        $sql = "INSERT INTO curso(cod_Curso, ativo, nome) VALUES(?,?,?);";
         $stmt = $con->prepare($sql);
-        $stmt->bind_param("ssssii",$matricula,$nome,$curso,$senha,$fk_curso,$ativo);
-        $matricula = $discente->getMatricula();
-        $nome = $discente->getNome();
-        $senha = $discente->getSenha();
-        $fk_curso = $curso->getCodCurso();
-        $ativo = $discente->getAtivo();
-        echo"matricula: $matricula, nome: $nome e curso: $curso";
-        echo"linha 20 ate aqui foi\n";
-        echo"Dados inseridos"; 
+        $stmt->bind_param("sss", $cod_Curso, $ativo, $nome);
+
+        $cod_Curso = $curso->getCodCurso();
+        $ativo = $curso->getAtivo();
+        $nome = $curso->getNome();
+        
         $stmt->execute();
-        }
-        }
+    }
 
     public function getAllActiveCoursers()
     {

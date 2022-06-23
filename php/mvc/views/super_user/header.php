@@ -1,4 +1,4 @@
-<div class="container mt-5 border rounded border-success col-8 p-4">
+<div class="container mt-5 border rounded border-success col-10 p-4">
 
     <div class="d-flex flex-row-reverse bd-highlight">
         <form method='post'>
@@ -9,5 +9,7 @@
 
     <h2 class="text-center mb-5">Tela de Super Usuário</h2>
         <tbody>
+
+            
 
             
